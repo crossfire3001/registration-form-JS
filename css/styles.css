@@ -16,6 +16,7 @@ body {
     background: rgb(255,255,251);
     background: linear-gradient(90deg, rgba(255,255,251,1) 50%, rgba(248,248,250,1) 50%);
     background-repeat: no-repeat;
+    position: relative;
 }
 
 a {
@@ -140,6 +141,61 @@ li {
 
 .registration__sign {
     text-align: center;
+    color: #636363;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/*=============== MODAL ===============*/
+.hidden {
+
+}
+
+.fade-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(25, 25, 25, 0.6);
+}
+
+.modal__window {
+    width: 400px;
+    height: 300px;
+    background: rgb(255,255,251);
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.modal__card {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal__card-text {
+    color: #636363;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+    margin-bottom: 20px;
+}
+
+.modal__btn {
+    display: inline-block;
+    width: 210px;
+    border-radius: 40px;
+    background: #DD3142;
+    padding: 21px;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 
