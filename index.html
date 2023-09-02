@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeWorks</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/modal.js"></script>
 </head>
 <body>
 
@@ -21,7 +20,7 @@
                     Downgrade to Basic (Free Forever) anytime.
                 </div>
                 <div class="registration__form">
-                    <div class="registration__details">
+                    <div class="registration__details fullname">
                         <span class="registration__details-title">Full Name</span>
                         <input type="text" id="fullname-input" class="base__input registration__base-input">
                     </div>
@@ -29,7 +28,7 @@
                         <span class="registration__details-title">Your username</span>
                         <input type="text" id="username-input" class="base__input registration__base-input">
                     </div>
-                    <div class="registration__details">
+                    <div class="registration__details email">
                         <span class="registration__details-title">E-mail</span>
                         <input type="text" id="email-input" class="base__input registration__base-input">
                     </div>
@@ -37,7 +36,7 @@
                         <span class="registration__details-title">Password</span>
                         <input type="text" id="password-input" class="base__input registration__base-input">
                     </div>
-                    <div class="registration__details">
+                    <div class="registration__details repeat-password">
                         <span class="registration__details-title">Repeat Password</span>
                         <input type="text" id="repeat-password-input" class="base__input registration__base-input">
                     </div>
@@ -46,7 +45,10 @@
                         <span class="registration__terms-text">Agree to our Terms of Service and Privacy Statement</span>
                     </div>
                     <div class="registration__action">
-                        <button class="btn registration__btn">Sign Up</button>
+                        <button type="button" class="btn registration__btn">Sign Up</button>
+                    </div>
+                    <div class="sign__action hidden">
+                        <button type="button" class="btn sign__btn">Sign In</button>
                     </div>
                     <a href="#" class="registration__sign">
                         Already have an account?
@@ -67,13 +69,13 @@
                 На вашу почту выслана ссылка, перейдите по ней, чтобы завершить регистрацию!
             </div>
             <div class="modal__card-action">
-                <a href="login.html" class="btn modal__btn">ОК</a>
+                <button type="button" class="btn modal__btn">ОК</button>
             </div>
         </div>
     </div>
 </div>
 
-
+<script src="js/script.js"></script>
 
 </body>
 </html>

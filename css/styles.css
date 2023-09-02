@@ -148,7 +148,7 @@ li {
 
 /*=============== MODAL ===============*/
 .hidden {
-
+    display: none;
 }
 
 .fade-block {
@@ -186,6 +186,23 @@ li {
 }
 
 .modal__btn {
+    display: inline-block;
+    width: 210px;
+    border-radius: 40px;
+    background: #DD3142;
+    padding: 21px;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sign__action {
+    text-align: center;
+}
+
+.sign__btn {
     display: inline-block;
     width: 210px;
     border-radius: 40px;
