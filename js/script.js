@@ -6,6 +6,9 @@ window.onload = function () {
   const modal = document.querySelector(".modal");
   const modalClose = modal.querySelector(".modal__btn");
   const passwordInput = document.getElementById("password-input");
+  const registrationSign = document.querySelector(".registration__sign");
+
+  registrationSign.onclick = goToLoginPage;
 
   fullNameInput.onkeydown = (e) => {
     const letters = e.key;
@@ -87,16 +90,19 @@ window.onload = function () {
   });
 
   modalClose.addEventListener("click", (e) => {
+    modal.classList.add("hidden");
+    goToLoginPage();
+  });
+
+  function goToLoginPage() {
     const registrationTitle = document.querySelector(".registration__title");
     const fullName = document.querySelector(".fullname");
     const email = document.querySelector(".email");
     const repeatPassword = document.querySelector(".repeat-password");
     const registrationTerms = document.querySelector(".registration__terms");
     const registrationAction = document.querySelector(".registration__action");
-    const registrationSign = document.querySelector(".registration__sign");
     const signAction = document.querySelector(".sign__action");
 
-    modal.classList.add("hidden");
     registrationTitle.innerText = "Log in to the system";
     fullName.remove();
     email.remove();
@@ -106,22 +112,24 @@ window.onload = function () {
     registrationSign.remove();
     signAction.classList.remove("hidden");
 
-    signAction.addEventListener("click", (e) => {
-      const signActionFilled = false;
-      if (!userNameInput.value) {
-        alert("Заполните заполните ник пользователя");
-        return;
-      }
-      if (passwordInput.value === "") {
-        alert("Заполните пароль");
-        return;
-      }
-      if (!signActionFilled) {
-        alert("Добро пожаловать, " + userNameInput.value + "!");
-        [userNameInput, passwordInput].forEach((item) => {
-          item.value = "";
-        });
-      }
-    });
-  });
+    signAction.onclick = onLogin;
+  }
+
+  function onLogin()  {
+    const signActionFilled = false;
+    if (!userNameInput.value) {
+      alert("Заполните заполните ник пользователя");
+      return;
+    }
+    if (passwordInput.value === "") {
+      alert("Заполните пароль");
+      return;
+    }
+    if (!signActionFilled) {
+      alert("Добро пожаловать, " + userNameInput.value + "!");
+      [userNameInput, passwordInput].forEach((item) => {
+        item.value = "";
+      });
+    }
+  }
 };
