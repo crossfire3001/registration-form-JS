@@ -32,7 +32,6 @@ window.onload = function () {
 
   registrationBtn.addEventListener("click", (e) => {
     const emailInput = document.getElementById("email-input");
-    const passwordInput = document.getElementById("password-input");
     const repeatPasswordInput = document.getElementById(
       "repeat-password-input"
     );
@@ -46,19 +45,24 @@ window.onload = function () {
       alert("Заполните заполните ник пользователя");
       return;
     }
-    if (!emailInput.value) {
+    if (emailInput.value === "") {
       alert("Заполните почту");
       return;
+    } else if (!emailInput.validity.valid) {
+      alert("Заполните почту правильно");
+      return;
     }
-    if (!passwordInput.value || passwordInput.value.length <= 8) {
+    if (passwordInput.value === "") {
       alert("Заполните пароль");
       return;
-    }
-    if (!repeatPasswordInput.value || repeatPasswordInput.value.length <= 8) {
-      alert("Заполните пароль повторно");
+    } else if (passwordInput.value.length <= 8) {
+      alert("Пароль должен иметь не меньше 8 символов");
       return;
     }
-    if (passwordInput.value !== repeatPasswordInput.value) {
+    if (repeatPasswordInput.value === "") {
+      alert("Заполните пароль повторно");
+      return;
+    } else if (repeatPasswordInput.value !== passwordInput.value) {
       alert("Пароли не совпадают");
       return;
     }
@@ -108,7 +112,7 @@ window.onload = function () {
         alert("Заполните заполните ник пользователя");
         return;
       }
-      if (!passwordInput.value) {
+      if (passwordInput.value === "") {
         alert("Заполните пароль");
         return;
       }
